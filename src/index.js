@@ -1,17 +1,23 @@
 import Phaser from 'phaser';
-
-import config from './config/config';
+import TitleScreen from './scenes/TitleScreen';
 import GameScene from './scenes/GameScene';
 
-
-class Game extends Phaser.Game {
-    constructor() {
-        super(config);
-        this.scene.add('Game', GameScene);
-        this.scene.start('Game');
+const config = {
+    width: window.innerWidth,
+    height: window.innerHeight,
+    type: Phaser.AUTO,
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 0 }
+        }
     }
 }
 
-window.onload = function() {
-    window.game = new Game();
-}
+const game = new Phaser.Game(config);
+
+game.scene.add('titlescreen', TitleScreen);
+game.scene.add('gamescene', GameScene);
+
+//game.scene.start('titlescreen');
+game.scene.start('gamescene');
