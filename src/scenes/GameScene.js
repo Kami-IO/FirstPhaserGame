@@ -1,5 +1,4 @@
 import Phaser from 'phaser';
-import CountdownController from './CountdownController';
 import RedBalloon from '../assets/balloon_red_string_ram.png';
 import Explosion1 from '../assets/explosion1.png';
 import Explosion2 from '../assets/explosion2.png';
@@ -7,9 +6,6 @@ import Explosion3 from '../assets/explosion3.png';
 import Explosion4 from '../assets/explosion4.png';
 import Explosion5 from '../assets/explosion5.png';
 import Explosion6 from '../assets/explosion6.png';
-import TitleScreen from './TitleScreen';
-
-
 
 
 class GameScene extends Phaser.Scene {
@@ -89,39 +85,6 @@ class GameScene extends Phaser.Scene {
             'explosion_image1'
         ).setDepth(1).setScale(0.6);
         
-        // const explosion2 = this.add.image(
-        //     balloonObject.x,
-        //     balloonObject.y,
-        //     'explosion_image2'
-        // ).setDepth(1).setScale(0.6);
-        // const explosion3 = this.add.image(
-        //     balloonObject.x,
-        //     balloonObject.y,
-        //     'explosion_image3'
-        // ).setDepth(1).setScale(0.6);
-        // const explosion4 = this.add.image(
-        //     balloonObject.x,
-        //     balloonObject.y,
-        //     'explosion_image4'
-        // ).setDepth(1).setScale(0.6);
-        // const explosion5 = this.add.image(
-        //     balloonObject.x,
-        //     balloonObject.y,
-        //     'explosion_image5'
-        // ).setDepth(1).setScale(0.6);
-        // const explosion6 = this.add.image(
-        //     balloonObject.x,
-        //     balloonObject.y,
-        //     'explosion_image6'
-        // ).setDepth(1).setScale(0.6);
-        // Add explosion frames
-        // explosion.addFrame('explosion_image1');
-        // explosion.addFrame('explosion_image1');
-        // explosion.addFrame('explosion_image1');
-        // explosion.addFrame('explosion_image1');
-        // explosion.addFrame('explosion_image1');
-        // explosion.addFrame('explosion_image1');
-
         // Set up animation
         this.anims.create({
             key: 'explode',
