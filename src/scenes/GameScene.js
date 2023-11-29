@@ -43,6 +43,7 @@ class GameScene extends Phaser.Scene {
     }
 
     create() {
+
         const text = this.add.text(this.sys.game.config.width/2, this.sys.game.config.height/2, 'Game Scene');
         text.setOrigin(0.5, 0.5);
         this.startCountdown();
