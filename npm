@@ -1,0 +1,1 @@
+npm install file-loader url-loader html-loader --save-dev
