@@ -22,7 +22,19 @@ module.exports = {
       {
         test: /\.(gif|png|jpe?g|svg|xml|glsl)$/i,
         use: "file-loader"
-      }
+      },
+      {
+        test: /\.(wav|mp3)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'assets/sounds/'
+                }
+            }
+        ]
+    },
     ]
   },
   plugins: [
