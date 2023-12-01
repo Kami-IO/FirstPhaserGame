@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import TitleScreen from './scenes/TitleScreen';
+import InputField from './scenes/InputField';
 import GameScene from './scenes/gameScene';
 import GameCountdown from './scenes/GameCountdown';
 import IntroScene from './scenes/IntroScene';
@@ -48,12 +48,16 @@ const initializeGame = async () => {
   // Add scenes
   game.scene.add('introscene', IntroScene);
   game.scene.add('gamecountdown', GameCountdown);
-  game.scene.add('titlescreen', TitleScreen);
+  game.scene.add('inputfield', InputField);
   game.scene.add('gamescene', GameScene);
 
   // Start game
-  game.scene.start('introscene');
+  game.scene.start('inputfield');
+
 };
 
 // Call the async function to initialize the game and insert data
 initializeGame();
+
+
+
