@@ -4,41 +4,16 @@ class InputField extends Phaser.Scene
 {
     preload ()
     {
-        this.load.html('loginform', '../assets/html/loginform');
+        this.load.html('loginform', 'assets/html/loginform.html');
+        
     }
 
     create() {
-        this.add.image(400, 300, 'pic');
-    
-        const text = this.add.text(10, 10, 'Please login to play', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
     
         // Use the correct key ('loginform') when creating from cache
         const element = this.add.dom(400, 600).createFromCache('loginform');
-    
-        if (!element) {
-            console.error('Failed to create element from cache.');
-            return;
-        }
-    
-        // Check if element.node is present before accessing style property
-        if (!element.node) {
-            console.error('Element.node is null.');
-            return;
-        }
-    
-        // Set perspective
-        try {
-            if (!element.node.style) {
-                console.error('Style property is null.');
-                return;
-            }
-    
-            element.setPerspective(800);
-        } catch (error) {
-            console.error('Error setting perspective:', error.message);
-            return;
-        }
 
+        
         element.addListener('click');
 
         element.on('click', function (event)

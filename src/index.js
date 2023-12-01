@@ -9,6 +9,10 @@ const config = {
     width: 1280,
     height: 720,
     type: Phaser.AUTO,
+    parent: 'loginform',
+    dom: {
+      createContainer: true
+    },
     physics: {
         default: 'arcade',
         arcade: {
@@ -52,7 +56,7 @@ const initializeGame = async () => {
   game.scene.add('gamescene', GameScene);
 
   // Start game
-  game.scene.start('inputfield');
+  game.scene.start('introscene');
 
 };
 
