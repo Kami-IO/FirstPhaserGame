@@ -8,11 +8,11 @@ class DBUtility {
     );
   }
 
-  async insertUserData(firstname, lastname, email) {
+  async insertUserData(firstname, lastname, email, score) {
     try {
       const { data, error } = await this.supabase
         .from('TestDatabase1') // Replace 'users' with your table name
-        .insert([{ firstname, lastname, email }]);
+        .insert([{ firstname, lastname, email, score }]);
       
       if (error) {
         console.error('Error inserting data:', error);

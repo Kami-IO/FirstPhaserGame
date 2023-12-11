@@ -36,7 +36,7 @@ const initializeGame = () => {
   game.scene.add('gamescene', GameScene);
 
   // Start game
-  game.scene.start('inputfield');
+  game.scene.start('introscene');
 
 };
 

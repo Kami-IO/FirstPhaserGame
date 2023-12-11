@@ -227,9 +227,9 @@ class GameScene extends Phaser.Scene {
     }
 
     endGame() {
-        // Add logic for what should happen when the game ends
+
         console.log('Game Over!');
-        this.scene.start('inputfield');
+        this.scene.start('inputfield', { score: this.score});
         
     }
 

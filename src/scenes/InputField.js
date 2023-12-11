@@ -8,6 +8,11 @@ class InputField extends Phaser.Scene {
     this.load.html('loginform', 'assets/html/loginform.html');
   }
 
+  init(data) {
+    // Store the data in the scene for later use
+    this.sceneData = data;
+  }
+
   create() {
     const text = this.add.text(16, 16, '', { fontSize: '32px', fill: 'blue' });
     // Use the correct key ('loginform') when creating from cache
@@ -41,13 +46,16 @@ class InputField extends Phaser.Scene {
           text.setText(`Welcome ${inputFirstname.value}`);
           
           // Call the database utility to insert data
-          dbUtility.insertUserData(inputFirstname.value, inputLastname.value, inputEmail.value);
+          dbUtility.insertUserData(inputFirstname.value, inputLastname.value, inputEmail.value, this.scene.sceneData.score);
         } else {
           // Flash the prompt
           this.scene.tweens.add({ targets: text, alpha: 0.1, duration: 200, ease: 'Power3', yoyo: true });
         }
       }
     });
+
+    
+    
 
     this.tweens.add({
       targets: element,
@@ -56,6 +64,7 @@ class InputField extends Phaser.Scene {
       ease: 'Power3'
     });
   }
+  
 }
 
 export default InputField;
